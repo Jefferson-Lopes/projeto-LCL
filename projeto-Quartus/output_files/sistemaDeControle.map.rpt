@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sistemaDeControle
-Thu Dec  3 23:09:31 2020
+Fri Dec  4 08:18:02 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Dec  3 23:09:31 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec  4 08:18:01 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; sistemaDeControle                           ;
 ; Top-level Entity Name           ; sistemaDeControle                           ;
@@ -290,7 +290,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Dec  3 23:09:21 2020
+    Info: Processing started: Fri Dec  4 08:17:51 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sistemaDeControle -c sistemaDeControle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -304,7 +304,7 @@ Info (12127): Elaborating entity "sistemaDeControle" for the top level hierarchy
 Info (12128): Elaborating entity "core" for hierarchy "core:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 17
 Warning (10858): Verilog HDL warning at core.sv(12): object out_m used but never assigned File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 12
 Warning (10030): Net "out_m" at core.sv(12) has no driver or initial value, using a default initial value '0' File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 12
-Info (12128): Elaborating entity "memory" for hierarchy "core:u0|memory:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 22
+Info (12128): Elaborating entity "memory" for hierarchy "core:u0|memory:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 20
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "debug2[0]" is stuck at VCC File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
     Warning (13410): Pin "debug2[1]" is stuck at GND File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
@@ -321,8 +321,8 @@ Info (21057): Implemented 44 device resources after synthesis - the final resour
     Info (21061): Implemented 18 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 445 megabytes
-    Info: Processing ended: Thu Dec  3 23:09:31 2020
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Processing ended: Fri Dec  4 08:18:02 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
 
 

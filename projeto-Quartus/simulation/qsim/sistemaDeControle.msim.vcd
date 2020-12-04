@@ -3,7 +3,7 @@ $comment
 		vcd file sistemaDeControle.msim.vcd -direction
 $end
 $date
-	Thu Dec  3 23:11:11 2020
+	Fri Dec  4 08:20:37 2020
 $end
 $version
 	ModelSim Version 2020.1

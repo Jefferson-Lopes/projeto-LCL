@@ -11,8 +11,6 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 	wire set_m;
 	wire [7:0] address_m, value_m, out_m;
 		
-	//assign out = out_m;
-		
 	memory u0 (
 		.set(set_m), 
 		.address(address_m), 
@@ -36,14 +34,14 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 	end
 
 	always @ (negedge submit) begin
-		if (mode) begin //add
-			set_m = 0; 
-			address_m = code;
-			value_m = 8'b0;
+		if (mode) begin       //add
+			set_m <= 0; 
+			address_m <= code;
+			value_m <= 8'b0;
 			if ((out_m + quant) > 8'b11111111) begin
-				set_m = 1'b1;
-				value_m = 8'b11111111;
-				debug1 = 2'b01;
+				set_m <= 1'b1;
+				value_m <= 8'b11111111;
+				debug1 <= 2'b01;
 			end
 			else begin
 				set_m <= 1'b1;
@@ -51,7 +49,7 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 				debug1 <= 2'b10;
 			end
 		end
-		else begin      //remove
+		else begin             //remove
 			debug1 <= 2'b11;
 		end
 	end
