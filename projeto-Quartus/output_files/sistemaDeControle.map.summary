@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Dec  4 18:05:10 2020
+Analysis & Synthesis Status : Successful - Fri Dec  4 19:18:36 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : sistemaDeControle
 Top-level Entity Name : sistemaDeControle
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 23
-Total pins : 26
+Total registers : 22
+Total pins : 20
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -3,115 +3,115 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'KEY[2]'
-Slack : -5.427
-TNS   : -43.021
+Slack : -5.720
+TNS   : -47.064
 
 Type  : Slow 1100mV 85C Model Setup 'core:u0|address_m[0]'
-Slack : -4.757
-TNS   : -251.517
+Slack : -4.203
+TNS   : -228.870
 
 Type  : Slow 1100mV 85C Model Hold 'KEY[2]'
-Slack : -2.054
-TNS   : -13.541
-
-Type  : Slow 1100mV 85C Model Hold 'core:u0|address_m[0]'
-Slack : 2.200
+Slack : 0.425
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.394
-TNS   : -7.021
+Type  : Slow 1100mV 85C Model Hold 'core:u0|address_m[0]'
+Slack : 1.509
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[2]'
 Slack : -0.394
-TNS   : -6.496
+TNS   : -6.921
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
+Slack : -0.394
+TNS   : -5.896
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'core:u0|address_m[0]'
-Slack : 0.287
+Slack : 0.071
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'KEY[2]'
-Slack : -5.346
-TNS   : -42.183
+Slack : -5.626
+TNS   : -45.732
 
 Type  : Slow 1100mV 0C Model Setup 'core:u0|address_m[0]'
-Slack : -4.723
-TNS   : -249.096
+Slack : -4.165
+TNS   : -230.916
 
 Type  : Slow 1100mV 0C Model Hold 'KEY[2]'
-Slack : -2.047
-TNS   : -13.370
+Slack : 0.344
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'core:u0|address_m[0]'
-Slack : 2.192
+Slack : 1.522
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[2]'
 Slack : -0.394
-TNS   : -7.915
+TNS   : -7.079
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[3]'
 Slack : -0.394
-TNS   : -7.138
+TNS   : -6.987
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'core:u0|address_m[0]'
-Slack : 0.277
+Slack : 0.075
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'KEY[2]'
-Slack : -2.900
-TNS   : -21.569
+Slack : -3.098
+TNS   : -24.555
 
 Type  : Fast 1100mV 85C Model Setup 'core:u0|address_m[0]'
-Slack : -2.604
-TNS   : -130.382
+Slack : -2.397
+TNS   : -119.090
 
 Type  : Fast 1100mV 85C Model Hold 'KEY[2]'
-Slack : -1.399
-TNS   : -9.588
+Slack : 0.206
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'core:u0|address_m[0]'
-Slack : 1.415
+Slack : 1.029
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[2]'
-Slack : -0.058
-TNS   : -0.680
+Slack : -0.061
+TNS   : -0.656
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.054
-TNS   : -0.582
+Slack : -0.055
+TNS   : -0.583
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'core:u0|address_m[0]'
-Slack : 0.343
+Slack : 0.215
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'core:u0|address_m[0]'
-Slack : -2.519
-TNS   : -126.945
 
 Type  : Fast 1100mV 0C Model Setup 'KEY[2]'
-Slack : -2.517
-TNS   : -18.514
+Slack : -2.699
+TNS   : -21.103
+
+Type  : Fast 1100mV 0C Model Setup 'core:u0|address_m[0]'
+Slack : -2.299
+TNS   : -116.453
 
 Type  : Fast 1100mV 0C Model Hold 'KEY[2]'
-Slack : -1.460
-TNS   : -10.068
-
-Type  : Fast 1100mV 0C Model Hold 'core:u0|address_m[0]'
-Slack : 1.449
+Slack : 0.150
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[2]'
-Slack : -0.079
-TNS   : -0.929
+Type  : Fast 1100mV 0C Model Hold 'core:u0|address_m[0]'
+Slack : 1.075
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[3]'
-Slack : -0.068
-TNS   : -0.741
+Slack : -0.080
+TNS   : -0.868
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[2]'
+Slack : -0.071
+TNS   : -0.769
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'core:u0|address_m[0]'
-Slack : 0.372
+Slack : 0.256
 TNS   : 0.000
 
 ------------------------------------------------------------
