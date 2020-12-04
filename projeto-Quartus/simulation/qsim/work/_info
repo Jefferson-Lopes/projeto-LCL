@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 d/home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/simulation/qsim
 vsistemaDeControle
-Z1 !s110 1607080837
+Z1 !s110 1607112864
 !i10b 1
-!s100 XZFRkj1TD:Lb8>G8lTX6L0
+!s100 gO77>85MzMOM@3jlYX0F40
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I;9bF=X<Z[fT1>1]aMV9;M3
+IX=9:6_N=z=haMN8A?11Q00
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1607080836
+w1607112863
 8sistemaDeControle.vo
 FsistemaDeControle.vo
-!i122 20
-L0 32 1239
+!i122 28
+L0 32 3199
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1607080837.000000
+Z5 !s108 1607112864.000000
 !s107 sistemaDeControle.vo|
 !s90 -work|work|sistemaDeControle.vo|
 !i113 1
@@ -36,16 +36,16 @@ nsistema@de@controle
 vsistemaDeControle_vlg_vec_tst
 R1
 !i10b 1
-!s100 YF58[I291?IkT4=?koFSM0
+!s100 GnheIAaBRh8e@?ae_W;9j1
 R2
-I8A4bcDZ`ePAFQ:QBFNZgS3
+Im5]VQciE[S1IN<=GIX8lY0
 R3
 R0
-w1607080834
+w1607112861
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-!i122 21
-L0 30 103
+!i122 29
+L0 30 105
 R4
 r1
 !s85 0
