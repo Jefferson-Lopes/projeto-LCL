@@ -36,10 +36,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug1[0]",
-					"strict" : false
-				},
-				{
 					"name" : "debug1[1]",
 					"strict" : false
 				},

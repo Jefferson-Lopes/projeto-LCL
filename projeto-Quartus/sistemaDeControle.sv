@@ -5,6 +5,10 @@ module sistemaDeControle (SW, KEY, LED, debug1, debug2);
 	output [1:0] debug1;
 	output [1:0] debug2;
 	
+	  ///////////////////////
+	 //No Verilog Warnings//
+	///////////////////////
+	
 	core u0 (
 		.mode(SW[9]), 
 		.c_q(SW[8]), 
@@ -15,7 +19,5 @@ module sistemaDeControle (SW, KEY, LED, debug1, debug2);
 		.debug2(debug2),
 		.out(LED)
 	);
-	
-	//mostrar entrada em tempo real junto com botao de show
 	
 endmodule

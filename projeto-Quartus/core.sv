@@ -8,14 +8,16 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 	reg [7:0] code  = 8'b0;
 	reg [7:0] quant = 8'b0;
 	
-	wire set_m;
-	wire [7:0] address_m, value_m, out_m;
+	wire we_m;
+	wire [7:0] address_m, quant_m, out_m;
+	
+	assign out = out_m;
 		
 	memory u0 (
-		.we(set_m), 
+		.we(we_m), 
 		.address(address_m), 
-		.data_in(value_m), 
-		.data_out(out),
+		.data_in(quant_m), 
+		.data_out(out_m),
 		.debug(debug2)
 	);
 	
@@ -35,22 +37,34 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 
 	always @ (negedge submit) begin
 		if (mode) begin       //add
-			set_m <= 0; 
+			we_m <= 0; 
 			address_m <= code;
-			value_m <= 8'b0;
+			quant_m <= 8'b0;
 			if ((out_m + quant) > 8'b11111111) begin
-				set_m <= 1'b1;
-				value_m <= 8'b11111111;
-				debug1 <= 2'b01;
+				we_m <= 1'b1;
+				quant_m <= 8'b11111111;
+				//debug1 <= 2'b01;
 			end
 			else begin
-				set_m <= 1'b1;
-				value_m <= quant;
-				debug1 <= 2'b10;
+				we_m <= 1'b1;
+				quant_m <= quant + out_m;
+				//debug1 <= 2'b10;
 			end
 		end
 		else begin             //remove
-			debug1 <= 2'b11;
+			we_m <= 0; 
+			address_m <= code;
+			quant_m <= 8'b0;
+			if ((out_m - quant) < 8'b0) begin
+				we_m <= 1'b1;
+				quant_m <= 8'b0;
+				debug1 <= 2'b01;
+			end
+			else begin
+				we_m <= 1'b1;
+				quant_m <= out_m - quant;
+				debug1 <= 2'b10;
+			end
 		end
 	end
 	
