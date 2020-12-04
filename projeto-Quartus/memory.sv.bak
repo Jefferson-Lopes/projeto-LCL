@@ -1,0 +1,11 @@
+module memory (address, value);
+	input [8:0] address;
+	output [8:0] value;
+	
+	reg [8:0] memory [8:0] = 0; //512 addresses with 512 bits each
+	
+	always @ (address) begin
+		value <= memory[address];
+	end
+
+endmodule

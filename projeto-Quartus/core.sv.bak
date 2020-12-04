@@ -1,0 +1,15 @@
+module core (mode, in, enter);
+	input mode, enter;
+	input [8:0] in;
+	
+	always @ (negedge enter) begin
+		if (mode) begin //add
+			
+		end
+		else begin      //remove
+		
+		end
+	
+	end
+
+endmodule
