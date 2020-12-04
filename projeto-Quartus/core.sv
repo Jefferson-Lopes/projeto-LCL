@@ -12,10 +12,10 @@ module core (mode, c_q, in, save, submit, debug1, debug2, out);
 	wire [7:0] address_m, value_m, out_m;
 		
 	memory u0 (
-		.set(set_m), 
+		.we(set_m), 
 		.address(address_m), 
-		.value(value_m), 
-		.out(out),
+		.data_in(value_m), 
+		.data_out(out),
 		.debug(debug2)
 	);
 	

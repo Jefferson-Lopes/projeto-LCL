@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sistemaDeControle
-Fri Dec  4 08:18:02 2020
+Fri Dec  4 09:23:18 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,8 +13,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Post-Synthesis Netlist Statistics for Top Partition
  12. Elapsed Time Per Partition
@@ -45,13 +45,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec  4 08:18:01 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec  4 09:23:18 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; sistemaDeControle                           ;
 ; Top-level Entity Name           ; sistemaDeControle                           ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 18                                          ;
+; Total registers                 ; 24                                          ;
 ; Total pins                      ; 26                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -180,42 +180,117 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 9            ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 1            ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 0            ;
-;     -- 5 input functions                    ; 0            ;
-;     -- 4 input functions                    ; 0            ;
-;     -- <=3 input functions                  ; 1            ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 18           ;
-;                                             ;              ;
-; I/O pins                                    ; 26           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[2]~input ;
-; Maximum fan-out                             ; 10           ;
-; Total fan-out                               ; 88           ;
-; Average fan-out                             ; 1.24         ;
-+---------------------------------------------+--------------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 57                   ;
+;                                             ;                      ;
+; Combinational ALUT usage for logic          ; 89                   ;
+;     -- 7 input functions                    ; 16                   ;
+;     -- 6 input functions                    ; 0                    ;
+;     -- 5 input functions                    ; 0                    ;
+;     -- 4 input functions                    ; 0                    ;
+;     -- <=3 input functions                  ; 73                   ;
+;                                             ;                      ;
+; Dedicated logic registers                   ; 24                   ;
+;                                             ;                      ;
+; I/O pins                                    ; 26                   ;
+;                                             ;                      ;
+; Total DSP Blocks                            ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; core:u0|address_m[2] ;
+; Maximum fan-out                             ; 24                   ;
+; Total fan-out                               ; 434                  ;
+; Average fan-out                             ; 2.63                 ;
++---------------------------------------------+----------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name       ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
-; |sistemaDeControle         ; 1 (0)               ; 18 (0)                    ; 0                 ; 0          ; 26   ; 0            ; |sistemaDeControle         ; sistemaDeControle ; work         ;
-;    |core:u0|               ; 1 (1)               ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |sistemaDeControle|core:u0 ; core              ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
+; |sistemaDeControle         ; 89 (0)              ; 24 (0)                    ; 0                 ; 0          ; 26   ; 0            ; |sistemaDeControle                   ; sistemaDeControle ; work         ;
+;    |core:u0|               ; 89 (1)              ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |sistemaDeControle|core:u0           ; core              ; work         ;
+;       |memory:u0|          ; 88 (88)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sistemaDeControle|core:u0|memory:u0 ; memory            ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; core:u0|memory:u0|memory~40                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~56                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~32                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~48                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~41                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~57                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~33                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~49                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~42                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~58                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~34                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~50                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~43                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~59                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~35                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~51                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~44                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~60                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~36                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~52                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~45                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~61                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~37                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~53                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~46                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~62                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~38                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~54                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~47                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~63                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~39                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~55                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~8                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~24                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~0                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~16                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~9                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~25                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~1                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~17                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~10                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~26                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~2                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~18                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~11                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~27                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~3                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~19                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~12                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~28                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~4                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~20                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~13                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~29                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~5                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~21                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~14                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~30                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~6                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~22                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~15                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~31                         ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~7                          ; core:u0|memory:u0|memory ; yes                    ;
+; core:u0|memory:u0|memory~23                         ; core:u0|memory:u0|memory ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +--------------------------------------------------------------------------------+
@@ -224,21 +299,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
 ; core:u0|set_m                         ; Stuck at VCC due to stuck port data_in ;
-; core:u0|address_m[0..2]               ; Lost fanout                            ;
-; core:u0|code[0..2]                    ; Lost fanout                            ;
-; Total Number of Removed Registers = 7 ;                                        ;
+; Total Number of Removed Registers = 1 ;                                        ;
 +---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+----------------------+--------------------+----------------------------------------+
-; Register name        ; Reason for Removal ; Registers Removed due to This Register ;
-+----------------------+--------------------+----------------------------------------+
-; core:u0|address_m[0] ; Lost Fanouts       ; core:u0|code[0]                        ;
-; core:u0|address_m[1] ; Lost Fanouts       ; core:u0|code[1]                        ;
-; core:u0|address_m[2] ; Lost Fanouts       ; core:u0|code[2]                        ;
-+----------------------+--------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -246,12 +308,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 18    ;
+; Total registers                              ; 24    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 22    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -261,17 +323,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 18                          ;
-;     ENA               ; 16                          ;
+; arriav_ff             ; 24                          ;
+;     ENA               ; 22                          ;
 ;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 3                           ;
-;     normal            ; 3                           ;
-;         0 data inputs ; 2                           ;
+; arriav_lcell_comb     ; 90                          ;
+;     extend            ; 16                          ;
+;         7 data inputs ; 16                          ;
+;     normal            ; 74                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
+;         3 data inputs ; 72                          ;
 ; boundary_port         ; 26                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.06                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -290,7 +355,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec  4 08:17:51 2020
+    Info: Processing started: Fri Dec  4 09:23:08 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sistemaDeControle -c sistemaDeControle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -306,23 +371,22 @@ Warning (10858): Verilog HDL warning at core.sv(12): object out_m used but never
 Warning (10030): Net "out_m" at core.sv(12) has no driver or initial value, using a default initial value '0' File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 12
 Info (12128): Elaborating entity "memory" for hierarchy "core:u0|memory:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 20
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "debug2[0]" is stuck at VCC File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
+    Warning (13410): Pin "debug2[0]" is stuck at GND File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
     Warning (13410): Pin "debug2[1]" is stuck at GND File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 3
     Warning (15610): No output dependent on input pin "KEY[1]" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 3
-Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 138 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 18 logic cells
+    Info (21061): Implemented 112 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 445 megabytes
-    Info: Processing ended: Fri Dec  4 08:18:02 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 437 megabytes
+    Info: Processing ended: Fri Dec  4 09:23:18 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
