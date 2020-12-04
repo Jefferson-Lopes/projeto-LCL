@@ -36,11 +36,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug[0]",
+					"name" : "debug1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "debug[1]",
+					"name" : "debug1[1]",
 					"strict" : false
 				},
 				{
@@ -52,7 +52,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[8]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -60,7 +60,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{

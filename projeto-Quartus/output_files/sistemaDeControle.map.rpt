@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sistemaDeControle
-Thu Dec  3 22:17:52 2020
+Thu Dec  3 23:09:31 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -16,10 +16,9 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +45,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Dec  3 22:17:52 2020       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec  3 23:09:31 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; sistemaDeControle                           ;
 ; Top-level Entity Name           ; sistemaDeControle                           ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 18                                          ;
-; Total pins                      ; 24                                          ;
+; Total pins                      ; 26                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -188,23 +187,23 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Estimate of Logic utilization (ALMs needed) ; 9            ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 2            ;
+; Combinational ALUT usage for logic          ; 1            ;
 ;     -- 7 input functions                    ; 0            ;
 ;     -- 6 input functions                    ; 0            ;
 ;     -- 5 input functions                    ; 0            ;
 ;     -- 4 input functions                    ; 0            ;
-;     -- <=3 input functions                  ; 2            ;
+;     -- <=3 input functions                  ; 1            ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 18           ;
 ;                                             ;              ;
-; I/O pins                                    ; 24           ;
+; I/O pins                                    ; 26           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
-; Maximum fan-out node                        ; KEY[3]~input ;
+; Maximum fan-out node                        ; KEY[2]~input ;
 ; Maximum fan-out                             ; 10           ;
 ; Total fan-out                               ; 88           ;
-; Average fan-out                             ; 1.29         ;
+; Average fan-out                             ; 1.24         ;
 +---------------------------------------------+--------------+
 
 
@@ -213,8 +212,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name       ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
-; |sistemaDeControle         ; 2 (0)               ; 18 (0)                    ; 0                 ; 0          ; 24   ; 0            ; |sistemaDeControle         ; sistemaDeControle ; work         ;
-;    |core:u0|               ; 2 (2)               ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |sistemaDeControle|core:u0 ; core              ; work         ;
+; |sistemaDeControle         ; 1 (0)               ; 18 (0)                    ; 0                 ; 0          ; 26   ; 0            ; |sistemaDeControle         ; sistemaDeControle ; work         ;
+;    |core:u0|               ; 1 (1)               ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |sistemaDeControle|core:u0 ; core              ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -257,15 +256,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |sistemaDeControle|core:u0|debug[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -274,13 +264,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; arriav_ff             ; 18                          ;
 ;     ENA               ; 16                          ;
 ;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 2                           ;
-;     normal            ; 2                           ;
-;         1 data inputs ; 2                           ;
-; boundary_port         ; 24                          ;
+; arriav_lcell_comb     ; 3                           ;
+;     normal            ; 3                           ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+; boundary_port         ; 26                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.12                        ;
+; Average LUT depth     ; 0.06                        ;
 +-----------------------+-----------------------------+
 
 
@@ -299,7 +290,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Dec  3 22:17:42 2020
+    Info: Processing started: Thu Dec  3 23:09:21 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sistemaDeControle -c sistemaDeControle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -310,8 +301,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file core.sv
 Info (12021): Found 1 design units, including 1 entities, in source file sistemaDeControle.sv
     Info (12023): Found entity 1: sistemaDeControle File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 1
 Info (12127): Elaborating entity "sistemaDeControle" for the top level hierarchy
-Info (12128): Elaborating entity "core" for hierarchy "core:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 15
-Info (12128): Elaborating entity "memory" for hierarchy "core:u0|memory:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 20
+Info (12128): Elaborating entity "core" for hierarchy "core:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 17
+Warning (10858): Verilog HDL warning at core.sv(12): object out_m used but never assigned File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 12
+Warning (10030): Net "out_m" at core.sv(12) has no driver or initial value, using a default initial value '0' File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 12
+Info (12128): Elaborating entity "memory" for hierarchy "core:u0|memory:u0" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/core.sv Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "debug2[0]" is stuck at VCC File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
+    Warning (13410): Pin "debug2[1]" is stuck at GND File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 6
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -319,13 +315,13 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 3
     Warning (15610): No output dependent on input pin "KEY[1]" File: /home/jeff/Documents/GitHub/projeto-LCL/projeto-Quartus/sistemaDeControle.sv Line: 3
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 10 output pins
+    Info (21059): Implemented 12 output pins
     Info (21061): Implemented 18 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 443 megabytes
-    Info: Processing ended: Thu Dec  3 22:17:52 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 445 megabytes
+    Info: Processing ended: Thu Dec  3 23:09:31 2020
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:23
 

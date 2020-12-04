@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/03/2020 21:19:27"
+// Generated on "12/03/2020 23:11:08"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          sistemaDeControle
 // 
@@ -33,37 +33,59 @@ module sistemaDeControle_vlg_vec_tst();
 reg [3:0] KEY;
 reg [9:0] SW;
 // wires                                               
-wire [1:0] debug;
+wire [7:0] LED;
+wire [1:0] debug1;
+wire [1:0] debug2;
 
 // assign statements (if any)                          
 sistemaDeControle i1 (
 // port map - connection between master ports and signals/registers   
 	.KEY(KEY),
+	.LED(LED),
 	.SW(SW),
-	.debug(debug)
+	.debug1(debug1),
+	.debug2(debug2)
 );
 initial 
 begin 
 #1000000 $finish;
 end 
-// SW[ 9 ]
-always
+
+// KEY[3]
+initial
 begin
-	SW[9] = 1'b0;
-	SW[9] = #20000 1'b1;
-	#20000;
+	KEY[3] = 1'b1;
+	KEY[3] = #10000 1'b0;
+	KEY[3] = #10000 1'b1;
+	KEY[3] = #10000 1'b0;
+	KEY[3] = #10000 1'b1;
+end 
+
+// KEY[2]
+initial
+begin
+	KEY[2] = 1'b1;
+	KEY[2] = #50000 1'b0;
+	KEY[2] = #10000 1'b1;
+end 
+// SW[ 9 ]
+initial
+begin
+	SW[9] = 1'b1;
+	SW[9] = #60000 1'b0;
 end 
 // SW[ 8 ]
-always
+initial
 begin
-	SW[8] = 1'b0;
-	SW[8] = #10000 1'b1;
-	#10000;
+	SW[8] = 1'b1;
+	SW[8] = #10000 1'b0;
 end 
 // SW[ 7 ]
 initial
 begin
 	SW[7] = 1'b0;
+	SW[7] = #20000 1'b1;
+	SW[7] = #20000 1'b0;
 end 
 // SW[ 6 ]
 initial
@@ -73,12 +95,15 @@ end
 // SW[ 5 ]
 initial
 begin
-	SW[5] = 1'b0;
+	SW[5] = 1'b1;
+	SW[5] = #10000 1'b0;
 end 
 // SW[ 4 ]
 initial
 begin
 	SW[4] = 1'b0;
+	SW[4] = #20000 1'b1;
+	SW[4] = #20000 1'b0;
 end 
 // SW[ 3 ]
 initial
@@ -89,24 +114,20 @@ end
 initial
 begin
 	SW[2] = 1'b0;
+	SW[2] = #20000 1'b1;
+	SW[2] = #20000 1'b0;
 end 
 // SW[ 1 ]
 initial
 begin
-	SW[1] = 1'b0;
+	SW[1] = 1'b1;
+	SW[1] = #10000 1'b0;
 end 
 // SW[ 0 ]
 initial
 begin
-	SW[0] = 1'b0;
-end 
-
-// KEY[3]
-always
-begin
-	KEY[3] = 1'b0;
-	KEY[3] = #5000 1'b1;
-	#5000;
+	SW[0] = 1'b1;
+	SW[0] = #10000 1'b0;
 end 
 endmodule
 
